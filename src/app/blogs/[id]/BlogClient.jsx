@@ -9,7 +9,7 @@ import axios from 'axios';
 import Head from 'next/head';
 import BlogItem from '@/Components/BlogItem';
 import { motion } from 'framer-motion';
-import NavbarNew from "@/Components/NavbarNew";
+import NavbarNew from "@/Components/Navbar";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faGooglePlusG, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { baseURL , company} from '@/config/api';
@@ -248,41 +248,52 @@ const onSubmitHandler = async (e) => {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(generateStructuredData(data)) }}
         />
       </Head>
-      <div className='bg-gray-200 py-10 px-5 md:px-12 lg:px-28'>
-        <div className='flex justify-between items-center'>
-          {/* <Link href='/'>
-            <Image src={assets.logo} width={180} alt='' className='w-[130px] sm:w-auto' />
-          </Link> */}
-          {/* <button className='flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-black shadow-[-7px_7px_0px_#000000]'>
-            Get started <Image src={assets.arrow} alt='' />
-          </button> */}
-        </div>
-        <div className='text-center my-44'>
-          <h1 className='text-2xl sm:text-5xl font-semibold max-w-[700px] mx-auto'>{data.title}</h1>
-          {/* <Image className='mx-auto mt-6 border border-white rounded-full' src={data.authorImg} width={60} height={60} alt='' /> */}
-          <p className='mt-1 pb-2 text-lg max-w-[740px] mx-auto'>{data.author}</p>
-          {/* Blog date and time */}
-          <div className='mt-2 text-sm text-gray-600 max-w-[740px] mx-auto'>
-            <span className='inline-flex items-center gap-1'>
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
-              Published on {new Date(data.createdAt || data.date).toLocaleDateString('en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
-              })} at {new Date(data.createdAt || data.date).toLocaleTimeString('en-US', {
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: true
-              })}
-            </span>
-          </div>
-        </div>
+<div className='bg-gray-200 py-10 px-5 md:px-12 lg:px-28'>
+  <div className='flex justify-between items-center'>
+    {/* <Link href='/'>
+      <Image src={assets.logo} width={180} alt='' className='w-[130px] sm:w-auto' />
+    </Link> */}
+    {/* <button className='flex items-center gap-2 font-medium py-1 px-3 sm:py-3 sm:px-6 border border-black shadow-[-7px_7px_0px_#000000]'>
+      Get started <Image src={assets.arrow} alt='' />
+    </button> */}
+  </div>
+  <div className='bg-gray-200 py-16 px-5 md:px-12 lg:px-28'>
+    <div className='flex justify-between items-center'>
+      {/* Your existing nav content */}
+    </div>
+    <div className='text-center my-20'>
+      <h1 className='text-3xl sm:text-5xl font-bold max-w-[800px] mx-auto leading-tight text-gray-900 mb-6'>
+        {data.title}
+      </h1>
+      <p className='mt-2 text-lg max-w-[740px] mx-auto text-gray-700'>
+        By {data.author}
+      </p>
+      <div className='mt-3 text-sm text-gray-600 max-w-[740px] mx-auto'>
+        <span className='inline-flex items-center gap-1'>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          {new Date(data.createdAt || data.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+          })}
+        </span>
       </div>
-      <div className='mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10'>
-        <Image className='border-4 border-white' src={data.image} width={800} height={480} alt='' />
-        <div className='blog-content' dangerouslySetInnerHTML={{__html:data.description}} />
+    </div>
+  </div>
+</div>
+
+<div className='mx-5 max-w-[800px] md:mx-auto mt-[-80px] mb-10'>
+  <Image 
+    className='border-4 border-white rounded-lg w-full' 
+    src={data.image} 
+    width={800} 
+    height={400} 
+    alt={data.title}
+    style={{ aspectRatio: '2/1', objectFit: 'cover' }}
+  />
+  <div className='blog-content mt-8' dangerouslySetInnerHTML={{__html:data.description}} />
         {/* Comments Section */}
         <div className="max-w-2xl mx-auto my-16">
           <h2 className="text-2xl font-bold mb-4">Comments ({comments.length})</h2>
