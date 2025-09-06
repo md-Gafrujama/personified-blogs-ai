@@ -316,26 +316,38 @@ const BlogClient = ({ slug }) => {
             />
           </motion.div>
           
-          {/* Blog Content with Enhanced Typography */}
-          <motion.div 
+          {/* Blog Content - Plain Format */}
+          <motion.article 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className='bg-white rounded-2xl shadow-xl p-8 md:p-12 mt-8 prose prose-lg prose-slate max-w-none'
-            style={{
-              '--tw-prose-body': 'rgb(51 65 85)',
-              '--tw-prose-headings': 'rgb(15 23 42)',
-              '--tw-prose-links': 'rgb(59 130 246)',
-              '--tw-prose-bold': 'rgb(15 23 42)',
-              '--tw-prose-code': 'rgb(239 68 68)',
-              '--tw-prose-pre-code': 'rgb(226 232 240)',
-              '--tw-prose-pre-bg': 'rgb(15 23 42)',
-              '--tw-prose-quotes': 'rgb(100 116 139)',
-              '--tw-prose-quote-borders': 'rgb(203 213 225)',
-            }}
+            className='mt-12 mb-16 bg-white'
           >
-            <div dangerouslySetInnerHTML={{__html: data.description}} />
-          </motion.div>
+            <div 
+              className='prose prose-xl prose-gray max-w-none leading-relaxed'
+              style={{
+                '--tw-prose-body': '#374151',
+                '--tw-prose-headings': '#111827',
+                '--tw-prose-lead': '#4B5563',
+                '--tw-prose-links': '#2563eb',
+                '--tw-prose-bold': '#111827',
+                '--tw-prose-counters': '#6B7280',
+                '--tw-prose-bullets': '#D1D5DB',
+                '--tw-prose-hr': '#E5E7EB',
+                '--tw-prose-quotes': '#111827',
+                '--tw-prose-quote-borders': '#E5E7EB',
+                '--tw-prose-captions': '#6B7280',
+                '--tw-prose-code': '#111827',
+                '--tw-prose-pre-code': '#E5E7EB',
+                '--tw-prose-pre-bg': '#1F2937',
+                '--tw-prose-th-borders': '#D1D5DB',
+                '--tw-prose-td-borders': '#E5E7EB',
+                lineHeight: '1.8',
+                fontSize: '18px',
+              }}
+              dangerouslySetInnerHTML={{__html: data.description}} 
+            />
+          </motion.article>
 
           {/* Comments Section with Enhanced Design */}
           <motion.div 
