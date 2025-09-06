@@ -1969,78 +1969,104 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
             </div>
           </motion.div>
 
-          {/* Enhanced Related Blogs Section */}
+          {/* Professional Related Blogs Section */}
           {relatedBlogs.length > 0 && (
             <motion.section 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.6 }}
-              className="my-24"
+              className="my-24 bg-gradient-to-br from-gray-50 to-blue-50/30 py-16 px-6 rounded-3xl"
             >
-              <div className="text-center mb-16">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-                  </svg>
+              <div className="text-center mb-12">
+                <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg border border-gray-100 mb-6">
+                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-600 font-medium">Related Articles</span>
                 </div>
-                <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Continue Reading
+                
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                  Continue Your Learning Journey
                 </h2>
-                <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-                  Discover more insights and stories that might interest you
+                <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                  Explore these handpicked articles that complement your current reading
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
                 {relatedBlogs.map((blog, index) => (
                   <motion.article
                     key={blog.slug}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 1.8 + (index * 0.1) }}
-                    whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                    className="group cursor-pointer"
+                    className="group cursor-pointer h-full"
                     onClick={() => window.location.href = `/blogs/${blog.slug}`}
                   >
-                    <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
-                      <div className="relative overflow-hidden">
+                    <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:border-gray-200 h-full flex flex-col">
+                      {/* Fixed height image container */}
+                      <div className="relative h-48 overflow-hidden bg-gray-100">
                         <img
                           src={blog.image}
                           alt={blog.title}
-                          className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700"
+                          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                           loading="lazy"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="absolute top-4 left-4">
-                          <span className="bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
+                        
+                        {/* Category badge */}
+                        <div className="absolute top-3 left-3">
+                          <span className="bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-semibold px-3 py-1 rounded-full border border-white/20 shadow-sm">
                             {blog.category}
                           </span>
                         </div>
-                      </div>
-                      
-                      <div className="p-6">
-                        <h3 className="text-xl font-bold mb-3 text-gray-900 line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
-                          {blog.title}
-                        </h3>
                         
-                        <p className="text-gray-600 text-sm line-clamp-3 mb-4 leading-relaxed">
-                          {blog.description?.replace(/<[^>]+>/g, '').slice(0, 120)}...
-                        </p>
-                        
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-2 text-xs text-gray-500">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        {/* Reading time */}
+                        <div className="absolute bottom-3 right-3">
+                          <div className="flex items-center gap-1 bg-black/20 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            {new Date(blog.createdAt || blog.date).toLocaleDateString('en-US', {
-                              month: 'short',
-                              day: 'numeric'
-                            })}
+                            <span>2 min</span>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Fixed height content container */}
+                      <div className="p-6 flex flex-col flex-1">
+                        {/* Title with fixed height */}
+                        <div className="h-16 mb-3">
+                          <h3 className="text-lg font-bold text-gray-900 leading-tight line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
+                            {blog.title}
+                          </h3>
+                        </div>
+                        
+                        {/* Description with fixed height */}
+                        <div className="h-12 mb-4 flex-1">
+                          <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">
+                            {blog.description?.replace(/<[^>]+>/g, '').slice(0, 100)}...
+                          </p>
+                        </div>
+                        
+                        {/* Footer */}
+                        <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
+                          <div className="flex items-center gap-2 text-xs text-gray-500">
+                            <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-medium text-xs">
+                              {blog.author?.charAt(0) || 'A'}
+                            </div>
+                            <span className="font-medium">
+                              {new Date(blog.createdAt || blog.date).toLocaleDateString('en-US', {
+                                month: 'short',
+                                day: 'numeric'
+                              })}
+                            </span>
                           </div>
                           
-                          <div className="flex items-center text-blue-600 group-hover:text-purple-600 transition-colors duration-300">
-                            <span className="text-sm font-medium">Read more</span>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <div className="flex items-center text-blue-600 group-hover:text-blue-700 transition-colors duration-300">
+                            <span className="text-sm font-medium mr-1">Read</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                             </svg>
                           </div>
@@ -2049,6 +2075,19 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                     </div>
                   </motion.article>
                 ))}
+              </div>
+              
+              {/* View all button */}
+              <div className="text-center mt-10">
+                <Link 
+                  href="/blogs" 
+                  className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-900 px-6 py-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 font-medium"
+                >
+                  <span>View All Articles</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </Link>
               </div>
             </motion.section>
           )}
