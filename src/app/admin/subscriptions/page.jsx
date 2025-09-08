@@ -4,6 +4,7 @@ import SubsTableItem from '@/Components/AdminComponents/SubsTableItem'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify'
+import { company  } from '@/config/api'
 
 const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:5000";
 
@@ -33,7 +34,7 @@ const Page = () => {
       });
       if (response.data.success) {
         // Filter emails by company in frontend as fallback
-        const filtered = response.data.emails.filter(e => e.company === personifiedb2b);
+        const filtered = response.data.emails.filter(e => e.company === company);
         setEmails(filtered);
       } else {
         toast.error('Failed to load subscriptions');
