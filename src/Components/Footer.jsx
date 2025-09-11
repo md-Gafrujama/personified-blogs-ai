@@ -3,8 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Logo1 from '../assets/Logo1.png';
-import Logo2 from '../assets/Logo2.png';
+import Logo1 from '../Assets/Logo1.png';
+import Logo2 from '../Assets/Logo2.png';
 import {
   FaInstagram,
   FaEnvelope,
@@ -110,8 +110,8 @@ const Footer = () => {
 
 
 <div>
-  <h3 className="text-xl font-semibold mb-4">About Us</h3>
-  <ul className="space-y-3 text-sm text-gray-300">
+  <h3 className="text-lg font-semibold mb-4">About Us</h3>
+  <ul className="space-y-2 text-sm text-gray-300">
     <li>
       <Link href="/Contact" className="hover:text-[#ffd800]">Contact Us</Link>
     </li>
@@ -131,43 +131,54 @@ const Footer = () => {
 </div>
 
 <div>
-  <h3 className="text-xl font-semibold mb-4">Our Solutions </h3>
-  <ul className="space-y-3 text-sm text-gray-300">
+  <h3 className="text-lg font-semibold mb-4">Our Services</h3>
+  <ul className="space-y-2 text-sm text-gray-300">
     <li>
-      <Link href="/ContentSyndication" className="hover:text-[#ffd800]">B2B Content Sydication</Link>
+      <Link href="/" className="hover:text-[#ffd800]">Marketing Strategy</Link>
     </li>
     <li>
-      <Link href="/B2BDataIntent" className="hover:text-[#ffd800]">B2B Data & Intent</Link>
+      <Link href="/" className="hover:text-[#ffd800]">Marketing Analysis</Link>
     </li>
     <li>
-      <Link href="/SalesDevelopment" className="hover:text-[#ffd800]">Sales Devlopment</Link>
+      <Link href="/" className="hover:text-[#ffd800]">Web Development</Link>
     </li>
-    
+    <li>
+      <Link href="/" className="hover:text-[#ffd800]">Web Development</Link>
+    </li>
+    <li>
+      <Link href="/" className="hover:text-[#ffd800]">Business Strategy</Link>
+    </li>
   </ul>
 </div>
 
 
         {/* Our Contact */}
         <div>
-          <h3 className="text-xl font-semibold mb-4">Our Contact</h3>
+          <h3 className="text-lg font-semibold mb-4">Our Contact</h3>
           <ul className="space-y-3 text-sm text-gray-300">
             <li className="flex items-center gap-2">
-              <FaEnvelope className="text-[#ffd800]" /> personifiedb2bmarketing@gmail.com
+              <FaEnvelope className="text-[#ffd800]" /> kulan.info@gmail.com
             </li>
-            
-           
-            
-            {/* <li className="flex items-center gap-2">
+            <li className="flex items-center gap-2">
+              <FaPhone className="text-[#ffd800]" /> +48 93939 0239
+            </li>
+            <li className="flex items-center gap-2">
+              <FaPhone className="text-[#ffd800]" /> +84 83939 0237
+            </li>
+            <li className="flex items-center gap-2">
+              <FaCalendarAlt className="text-[#ffd800]" /> Mon - Fri 10:00 - 18:00
+            </li>
+            <li className="flex items-center gap-2">
               <FaMapMarkerAlt className="text-[#ffd800]" /> Jilons, TP06/90 NY, USA
-            </li> */}
+            </li>
           </ul>
         </div>
       </div>
 
       {/* Bottom Copyright */}
       <div className="border-t border-gray-600 pt-6 text-center text-sm text-gray-400">
-         © 2025 Personifind.com {" "}
-        <span className="text-[#ffd800]">| All Rights Reserved.</span>
+        © Copyright All Rights Reserved by{" "}
+        <span className="text-[#ffd800]">Kulan WordPress Theme</span>
       </div>
     </footer>
   );
