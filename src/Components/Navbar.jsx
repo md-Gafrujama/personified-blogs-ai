@@ -395,39 +395,18 @@ const Navbar = () => {
         <>
             {/* Top Navigation Bar (formerly upnav) */}
             <div className="fixed top-0 left-0 right-0 z-50 flex flex-col md:flex-row justify-between items-center w-full bg-[#386861] text-white text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl px-2 sm:px-4 py-2 sm:py-4 gap-2 sm:gap-3 md:gap-0">
-                {/* Working Hours Section */}
-                <div className="flex items-center gap-1 sm:gap-2 flex-wrap justify-center md:justify-start text-center md:text-left">
-                    <AiOutlineClockCircle size={18} />
-                    <span className="font-bold">Working Hours:</span>
-                    <span>Monday - Friday, 10am - 05pm</span>
-                </div>
+               
 
                 {/* Contact & Social Section */}
                 <div className="flex flex-wrap justify-center md:justify-end items-center gap-2 sm:gap-4 text-center">
                     <a href="mailto:example@gmail.com" className="font-bold hover:text-[#ffd800] transition-colors">
-                        example@gmail.com
+                        personifiedb2bmarketing@gmail.com
                     </a>
                     <span className="font-bold hidden sm:inline">|</span>
-                    <a href="tel:+3929455645" className="font-bold hover:text-[#ffd800] transition-colors">
-                        +3929 455 645
-                    </a>
+                  
                     <span className="font-bold hidden sm:inline">|</span>
                     
-                    {/* Social Icons */}
-                    <div className="flex items-center gap-2">
-                        {navigationData.socialMedia.map((social, i) => (
-                            <a 
-                                key={`${social.label}-${i}`}
-                                href={social.href} 
-                                className="hover:text-[#ffd800] transition-colors" 
-                                aria-label={social.label}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                {social.icon}
-                            </a>
-                        ))}
-                    </div>
+                    
                 </div>
             </div>
 
