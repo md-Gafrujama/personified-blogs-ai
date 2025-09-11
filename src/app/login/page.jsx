@@ -18,10 +18,8 @@ const Login = () => {
     e.preventDefault();
     try {
       // Dynamically set endpoint
-      const endpoint =
-        role === "admin"
-          ? `${baseURL}/api/admin/login`
-          : `${baseURL}/api/super-admin/login`;
+      const endpoint =`${baseURL}/api/admin/login`
+
 
       const { data } = await axios.post(endpoint, { email, password });
 
@@ -32,11 +30,9 @@ const Login = () => {
         localStorage.setItem("company", data.company);
         axios.defaults.headers.common["Authorization"] = data.token;
 
-        if (role === "admin") {
+       
           router.push("/admin/dashboard");
-        } else {
-          router.push("/super-admin/dashboard");
-        }
+
       } else {
         toast.error(data.message);
       }
@@ -54,7 +50,7 @@ const Login = () => {
               <span className="text-[#5044E5]">{role === "admin" ? "Admin" : "Super Admin"}</span> Login
             </h1>
             <p className="font-light">
-              Enter your credentials to access the {role} panel
+              Enter your credentials to access the Admin panel
             </p>
           </div>
           <form
@@ -63,26 +59,7 @@ const Login = () => {
           >
             {/* Role selection */}
             <div className="flex gap-6 mb-6 justify-center">
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  value="admin"
-                  checked={role === "admin"}
-                  onChange={(e) => setRole(e.target.value)}
-                  className="accent-[#5044E5] w-4 h-4"
-                />
-                Admin
-              </label>
-              <label className="flex items-center gap-2 cursor-pointer">
-                <input
-                  type="radio"
-                  value="super-admin"
-                  checked={role === "super-admin"}
-                  onChange={(e) => setRole(e.target.value)}
-                  className="accent-[#5044E5] w-4 h-4"
-                />
-                Super Admin
-              </label>
+
             </div>
 
             {/* Email */}
