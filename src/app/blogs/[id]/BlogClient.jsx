@@ -1250,9 +1250,17 @@ const BlogClient = ({ slug }) => {
               className='rounded-2xl w-full shadow-2xl bg-white' 
               src={data.image} 
               width={1200} 
-              height={540} 
+              height={600} 
               alt={data.title}
-              style={{ aspectRatio: '16/9', objectFit: 'contain', objectPosition: 'center', filter: 'brightness(0.9) saturate(0.95)' }}
+              style={{ 
+                aspectRatio: '2/1', 
+                objectFit: 'cover', 
+                objectPosition: 'center',
+                width: '100%',
+                height: '600px',
+                maxHeight: '600px',
+                minHeight: '600px'
+              }}
             />
           </motion.div>
           
@@ -1771,14 +1779,6 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
             </div>
             
             <div className="space-y-6 mb-12">
-              {comments.length === 0 && (
-                <div className="text-center py-12 text-[#294944] bg-[#F7F7D0]/40 rounded-xl">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
-                  <p className="text-lg">Be the first to share your thoughts!</p>
-                </div>
-              )}
               {comments.map((c) => (
                 <div key={c._id} className="bg-gradient-to-r from-white to-[#F7F7D0]/30 p-6 rounded-xl border border-[#E8F1EF] hover:shadow-md transition-all duration-300">
                   <div className="flex items-start gap-4">
@@ -1862,24 +1862,16 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="bg-gradient-to-r from-[#294944] via-[#386861] to-[#294944] rounded-2xl p-8 md:p-12 my-16 text-white relative overflow-hidden"
+            className="p-8 md:p-12 my-16 relative overflow-hidden"
           >
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `radial-gradient(circle at 2px 2px, white 2px, transparent 0)`,
-                backgroundSize: '32px 32px'
-              }}></div>
-            </div>
-            
             <div className="relative z-10 text-center max-w-2xl mx-auto">
-              <div className="w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-6">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-3xl font-bold mb-4">Stay in the loop</h3>
-              <p className="text-[#E5F2EF] mb-8 text-lg">Get the latest insights and updates delivered straight to your inbox.</p>
+              <h3 className="text-3xl font-bold mb-4 text-black">Stay in the loop</h3>
+              <p className="text-gray-600 mb-8 text-lg">Get the latest insights and updates delivered straight to your inbox.</p>
               
               <form onSubmit={onSubmitHandler} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
                 <input 
@@ -1890,12 +1882,12 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                   name="email"
                   placeholder='Enter your email address' 
                   required 
-                  className='flex-1 px-6 py-4 rounded-xl bg-white/20 backdrop-blur-sm border border-white/30 placeholder-white/70 text-white outline-none focus:ring-4 focus:ring-white/30 focus:border-white/50 transition-all duration-300'
+                  className='flex-1 px-6 py-4 rounded-xl bg-white border border-gray-300 placeholder-gray-500 text-black outline-none focus:ring-4 focus:ring-blue-300 focus:border-blue-500 transition-all duration-300'
                 />
                 <button 
                   type="submit" 
                   disabled={isSubscribing}
-                  className='bg-[#F7D270] text-[#294944] px-8 py-4 rounded-xl font-semibold hover:bg-[#f5c957] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap shadow-lg hover:shadow-xl'
+                  className='bg-black text-white px-8 py-4 rounded-xl font-semibold hover:bg-gray-800 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap'
                 >
                   {isSubscribing ? (
                     <>
@@ -1919,7 +1911,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
               {email && (
                 <button 
                   onClick={onClear} 
-                  className='inline-flex items-center text-white/70 hover:text-white transition-colors duration-200 mt-4 text-sm'
+                  className='inline-flex items-center text-gray-600 hover:text-black transition-colors duration-200 mt-4 text-sm'
                 >
                   Clear email
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1935,7 +1927,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
-            className=' rounded-2xl shadow-xl p-8 my-16 text-center'
+            className='p-8 my-16 text-center'
           >
             <div className="w-12 h-12 bg-gradient-to-r from-[#386861] to-[#294944] rounded-full flex items-center justify-center mx-auto mb-6">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -2092,7 +2084,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
               <div className="text-center mt-10">
                 <Link 
                   href="/blogs" 
-                  className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-gray-900 px-6 py-3 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 font-medium"
+                  className="inline-flex items-center gap-2 text-gray-900 px-6 py-3 transition-all duration-300 font-medium"
                 >
                   <span>View All Articles</span>
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
