@@ -57,7 +57,7 @@ const Header = () => {
           {/* <Image src={assets.logo} width={180} alt='image' className='w-[130px] sm:w-auto'/> */}
         </div>
 
-        <div className='max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 relative pt-32 pb-24'>
+        <div className='max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 xl:px-16 relative pt-24 pb-24'>
           {/* Header with logo and button */}
           <div className='flex justify-between items-center mb-12'>
             {/* Logo and Get Started button sections available for future use */}
@@ -65,19 +65,7 @@ const Header = () => {
 
           <div className='text-center'>
             {/* New feature badge with theme colors and enhanced animation */}
-            <div 
-              className='inline-flex items-center justify-center gap-2 px-5 py-2 mb-8 border-2 border-[#F7D270]/60 bg-gradient-to-r from-[#F7D270]/15 to-[#386861]/10 rounded-full text-sm text-[#294944] shadow-lg hover:shadow-[#F7D270]/30 hover:border-[#F7D270] transition-all duration-300 cursor-default animate-bounce'
-              onMouseEnter={() => setIsHovering(true)}
-              onMouseLeave={() => setIsHovering(false)}
-            >
-              <div className='w-2 h-2 bg-[#F7D270] rounded-full animate-pulse'></div>
-              <p className='font-semibold'>New: Subscribe to our newsletter</p>
-              <img 
-                src={assets.star_icon} 
-                className={`w-3 h-3 transition-transform duration-300 ${isHovering ? 'rotate-180 scale-125' : ''}`} 
-                alt="Star icon" 
-              />
-            </div>
+          
 
             {/* Main heading with theme gradient text */}
             <h1 className='text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-6'>

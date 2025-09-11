@@ -1177,8 +1177,8 @@ const BlogClient = ({ slug }) => {
         />
       </Head>
       
-      {/* Hero Section with Enhanced Design */}
-      <div className='relative bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 py-20 px-5 md:px-12 lg:px-28 overflow-hidden'>
+      {/* Hero Section with Green/Yellow theme to match navbar */}
+      <div className='relative bg-gradient-to-br from-[#294944] via-[#386861] to-[#294944] py-20 px-5 md:px-12 lg:px-28 overflow-hidden'>
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -1193,9 +1193,9 @@ const BlogClient = ({ slug }) => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className='inline-block bg-blue-500/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-4 py-2 mb-6'
+              className='inline-block bg-[#F7D270]/20 backdrop-blur-sm border border-[#F7D270]/30 rounded-full px-4 py-2 mb-6'
             >
-              <span className='text-blue-300 text-sm font-medium'>{data.category}</span>
+              <span className='text-[#F7D270] text-sm font-medium'>{data.category}</span>
             </motion.div>
             
             <motion.h1 
@@ -1211,16 +1211,16 @@ const BlogClient = ({ slug }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className='flex flex-col md:flex-row items-center justify-center gap-6 text-blue-100'
+              className='flex flex-col md:flex-row items-center justify-center gap-6 text-[#E5F2EF]'
             >
               <div className='flex items-center gap-3'>
-                <div className='w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold'>
+                <div className='w-10 h-10 bg-gradient-to-r from-[#386861] to-[#294944] rounded-full flex items-center justify-center text-white font-semibold'>
                   {data.author?.charAt(0) || 'A'}
                 </div>
                 <span className='text-lg font-medium'>By {data.author}</span>
               </div>
               
-              <div className='flex items-center gap-2 text-blue-200'>
+              <div className='flex items-center gap-2 text-[#E5F2EF]'>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
@@ -1247,12 +1247,12 @@ const BlogClient = ({ slug }) => {
             className='relative'
           >
             <Image 
-              className='rounded-2xl w-full shadow-2xl' 
+              className='rounded-2xl w-full shadow-2xl bg-white' 
               src={data.image} 
               width={1200} 
-              height={600} 
+              height={540} 
               alt={data.title}
-              style={{ aspectRatio: '2/1', objectFit: 'cover' }}
+              style={{ aspectRatio: '16/9', objectFit: 'contain', objectPosition: 'center', filter: 'brightness(0.9) saturate(0.95)' }}
             />
           </motion.div>
           
@@ -1261,7 +1261,7 @@ const BlogClient = ({ slug }) => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className='mt-12 mb-16 bg-white'
+            className='mt-12 mb-16 bg-white rounded-2xl p-6 md:p-10 border border-[#E8F1EF]'
           >
             <div 
               className='blog-content-wrapper max-w-none'
@@ -1283,7 +1283,7 @@ const BlogClient = ({ slug }) => {
                   line-height: 1.1;
                   margin: 3rem 0 2rem 0;
                   color: #0f172a;
-                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                  background: linear-gradient(135deg, #386861 0%, #F7D270 100%);
                   -webkit-background-clip: text;
                   -webkit-text-fill-color: transparent;
                   background-clip: text;
@@ -1298,7 +1298,7 @@ const BlogClient = ({ slug }) => {
                   left: 0;
                   width: 60px;
                   height: 4px;
-                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                  background: linear-gradient(135deg, #386861 0%, #F7D270 100%);
                   border-radius: 2px;
                 }
                 
@@ -1310,15 +1310,15 @@ const BlogClient = ({ slug }) => {
                   color: #1e293b;
                   position: relative;
                   padding: 1.5rem 2rem;
-                  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+                  background: linear-gradient(135deg, #f0fdf4 0%, #fefce8 100%);
                   border-radius: 12px;
-                  border-left: 5px solid #667eea;
+                  border-left: 5px solid #386861;
                   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
                 }
                 
                 .blog-content-wrapper h2::before {
                   content: '▍';
-                  color: #667eea;
+                  color: #386861;
                   font-size: 2rem;
                   position: absolute;
                   left: 0.5rem;
@@ -1344,7 +1344,7 @@ const BlogClient = ({ slug }) => {
                   left: 0;
                   width: 40px;
                   height: 2px;
-                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                  background: linear-gradient(135deg, #386861 0%, #F7D270 100%);
                 }
                 
                 .blog-content-wrapper h4 {
@@ -1359,7 +1359,7 @@ const BlogClient = ({ slug }) => {
                 
                 .blog-content-wrapper h4::before {
                   content: '◆';
-                  color: #667eea;
+                  color: #386861;
                   position: absolute;
                   left: 0;
                   font-size: 0.8em;
@@ -1378,13 +1378,13 @@ const BlogClient = ({ slug }) => {
                 .blog-content-wrapper b {
                   font-weight: 700;
                   color: #0f172a;
-                  background: linear-gradient(120deg, #fef3c7 0%, #f59e0b 30%, #fef3c7 100%);
+                  background: linear-gradient(120deg, #F7F7D0 0%, #F7D270 35%, #F7F7D0 100%);
                   background-size: 200% 100%;
                   background-position: 100% 0;
                   transition: background-position 0.3s ease;
                   padding: 2px 6px;
                   border-radius: 4px;
-                  box-shadow: 0 2px 4px rgba(245, 158, 11, 0.2);
+                  box-shadow: 0 2px 4px rgba(56, 104, 97, 0.15);
                 }
                 
                 .blog-content-wrapper strong:hover,
@@ -1410,10 +1410,10 @@ const BlogClient = ({ slug }) => {
                 }
                 
                 .blog-content-wrapper a {
-                  color: #2563eb;
+                  color: #386861;
                   text-decoration: none;
-                  font-weight: 500;
-                  background: linear-gradient(120deg, transparent 0%, transparent 95%, #2563eb 95%);
+                  font-weight: 600;
+                  background: linear-gradient(120deg, transparent 0%, transparent 95%, #F7D270 95%);
                   background-size: 0% 100%;
                   background-repeat: no-repeat;
                   transition: all 0.4s ease;
@@ -1424,9 +1424,9 @@ const BlogClient = ({ slug }) => {
                 
                 .blog-content-wrapper a:hover {
                   background-size: 100% 100%;
-                  color: white;
+                  color: #294944;
                   transform: translateY(-1px);
-                  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+                  box-shadow: 0 4px 8px rgba(247, 210, 112, 0.4);
                 }
                 
                 .blog-content-wrapper blockquote {
@@ -1439,7 +1439,7 @@ const BlogClient = ({ slug }) => {
                   color: #334155;
                   position: relative;
                   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-                  border-left: 6px solid #667eea;
+                  border-left: 6px solid #386861;
                   font-size: 1.125rem;
                   line-height: 1.7;
                 }
@@ -1447,7 +1447,7 @@ const BlogClient = ({ slug }) => {
                 .blog-content-wrapper blockquote::before {
                   content: '"';
                   font-size: 5rem;
-                  color: #667eea;
+                  color: #386861;
                   position: absolute;
                   top: -20px;
                   left: 30px;
@@ -1459,7 +1459,7 @@ const BlogClient = ({ slug }) => {
                 .blog-content-wrapper blockquote::after {
                   content: '"';
                   font-size: 3rem;
-                  color: #667eea;
+                  color: #386861;
                   position: absolute;
                   bottom: 10px;
                   right: 30px;
@@ -1488,13 +1488,13 @@ const BlogClient = ({ slug }) => {
                 }
                 
                 .blog-content-wrapper ul li:hover {
-                  border-left-color: #667eea;
+                  border-left-color: #386861;
                   background: linear-gradient(90deg, #f1f5f9 0%, transparent 100%);
                 }
                 
                 .blog-content-wrapper ul li::before {
                   content: '●';
-                  color: #667eea;
+                  color: #386861;
                   font-size: 1.5rem;
                   position: absolute;
                   left: 1rem;
@@ -1510,12 +1510,12 @@ const BlogClient = ({ slug }) => {
                   background: linear-gradient(90deg, #fef7ff 0%, transparent 100%);
                   padding: 0.75rem 1rem 0.75rem 3.5rem;
                   border-radius: 8px;
-                  border-left: 3px solid #e879f9;
+                  border-left: 3px solid #F7D270;
                 }
                 
                 .blog-content-wrapper ol li::before {
                   content: counter(item);
-                  background: linear-gradient(135deg, #a855f7 0%, #e879f9 100%);
+                  background: linear-gradient(135deg, #386861 0%, #F7D270 100%);
                   color: white;
                   font-weight: bold;
                   font-size: 0.875rem;
@@ -1531,17 +1531,28 @@ const BlogClient = ({ slug }) => {
                 }
                 
                 .blog-content-wrapper img {
-                  margin: 3rem auto;
-                  border-radius: 20px;
-                  max-width: 100%;
+                  margin: 2rem auto;
+                  border-radius: 16px;
+                  width: 85%;
+                  max-width: 900px;
+                  max-height: 520px;
                   height: auto;
                   display: block;
+                  object-fit: contain;
                   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
                   box-shadow: 
                     0 0 0 1px rgba(0, 0, 0, 0.05),
                     0 10px 25px -5px rgba(0, 0, 0, 0.1),
                     0 20px 40px -7px rgba(0, 0, 0, 0.1);
                   position: relative;
+                  filter: brightness(0.92) saturate(0.95);
+                }
+
+                @media (max-width: 768px) {
+                  .blog-content-wrapper img {
+                    width: 100%;
+                    max-height: 360px;
+                  }
                 }
                 
                 .blog-content-wrapper img:hover {
@@ -1626,7 +1637,7 @@ const BlogClient = ({ slug }) => {
                 }
                 
                 .blog-content-wrapper th {
-                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                  background: linear-gradient(135deg, #386861 0%, #F7D270 100%);
                   color: white;
                   font-weight: 600;
                   font-size: 0.95rem;
@@ -1647,7 +1658,7 @@ const BlogClient = ({ slug }) => {
                 .blog-content-wrapper hr {
                   border: none;
                   height: 2px;
-                  background: linear-gradient(90deg, transparent, #667eea, #764ba2, transparent);
+                  background: linear-gradient(90deg, transparent, #386861, #F7D270, transparent);
                   margin: 4rem 0;
                   border-radius: 1px;
                 }
@@ -1684,7 +1695,7 @@ const BlogClient = ({ slug }) => {
                   font-weight: 800;
                   line-height: 1;
                   color: transparent;
-                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                  background: linear-gradient(135deg, #386861 0%, #F7D270 100%);
                   -webkit-background-clip: text;
                   -webkit-text-fill-color: transparent;
                   background-clip: text;
@@ -1748,10 +1759,10 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
-            className="bg-white rounded-2xl shadow-xl p-8 md:p-12 my-16"
+            className="bg-white rounded-2xl shadow-xl p-8 md:p-12 my-16 border border-[#E8F1EF]"
           >
             <div className="flex items-center gap-3 mb-8">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-r from-[#386861] to-[#294944] rounded-full flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                 </svg>
@@ -1761,7 +1772,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
             
             <div className="space-y-6 mb-12">
               {comments.length === 0 && (
-                <div className="text-center py-12 text-gray-500 bg-gray-50 rounded-xl">
+                <div className="text-center py-12 text-[#294944] bg-[#F7F7D0]/40 rounded-xl">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto mb-4 text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                   </svg>
@@ -1769,9 +1780,9 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                 </div>
               )}
               {comments.map((c) => (
-                <div key={c._id} className="bg-gradient-to-r from-gray-50 to-blue-50/30 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-all duration-300">
+                <div key={c._id} className="bg-gradient-to-r from-white to-[#F7F7D0]/30 p-6 rounded-xl border border-[#E8F1EF] hover:shadow-md transition-all duration-300">
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">
+                    <div className="w-10 h-10 bg-gradient-to-r from-[#386861] to-[#294944] rounded-full flex items-center justify-center text-white font-semibold flex-shrink-0">
                       {c.name.charAt(0).toUpperCase()}
                     </div>
                     <div className="flex-1">
@@ -1800,9 +1811,9 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
               <h3 className="text-xl font-semibold mb-6 text-gray-900">Join the conversation</h3>
               <form onSubmit={addComment} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Your Name</label>
+                  <label className="block text-sm font-medium text-[#294944] mb-2">Your Name</label>
                   <input
-                    className="w-full border-2 border-gray-200 px-4 py-3 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-300 text-gray-900 placeholder-gray-400"
+                    className="w-full border-2 border-[#E8F1EF] px-4 py-3 rounded-xl focus:border-[#386861] focus:ring-4 focus:ring-[#386861]/15 transition-all duration-300 text-gray-900 placeholder-gray-400"
                     placeholder="Enter your name"
                     value={name}
                     onChange={e => setName(e.target.value)}
@@ -1810,10 +1821,10 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">Your Comment</label>
+                  <label className="block text-sm font-medium text-[#294944] mb-2">Your Comment</label>
                   <textarea
                     rows={5}
-                    className="w-full border-2 border-gray-200 px-4 py-3 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-100 transition-all duration-300 text-gray-900 placeholder-gray-400 resize-none"
+                    className="w-full border-2 border-[#E8F1EF] px-4 py-3 rounded-xl focus:border-[#386861] focus:ring-4 focus:ring-[#386861]/15 transition-all duration-300 text-gray-900 placeholder-gray-400 resize-none"
                     placeholder="Share your thoughts..."
                     value={content}
                     onChange={e => setContent(e.target.value)}
@@ -1823,7 +1834,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 font-medium disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2 shadow-lg hover:shadow-xl"
+                  className="bg-[#386861] text-[#F7D270] px-8 py-3 rounded-xl hover:bg-[#294944] transition-all duration-300 font-medium disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2 shadow-lg hover:shadow-xl"
                 >
                   {isSubmitting ? (
                     <>
@@ -1851,7 +1862,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 rounded-2xl p-8 md:p-12 my-16 text-white relative overflow-hidden"
+            className="bg-gradient-to-r from-[#294944] via-[#386861] to-[#294944] rounded-2xl p-8 md:p-12 my-16 text-white relative overflow-hidden"
           >
             {/* Background Pattern */}
             <div className="absolute inset-0 opacity-10">
@@ -1868,7 +1879,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                 </svg>
               </div>
               <h3 className="text-3xl font-bold mb-4">Stay in the loop</h3>
-              <p className="text-blue-100 mb-8 text-lg">Get the latest insights and updates delivered straight to your inbox.</p>
+              <p className="text-[#E5F2EF] mb-8 text-lg">Get the latest insights and updates delivered straight to your inbox.</p>
               
               <form onSubmit={onSubmitHandler} className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
                 <input 
@@ -1884,7 +1895,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                 <button 
                   type="submit" 
                   disabled={isSubscribing}
-                  className='bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-gray-100 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap shadow-lg hover:shadow-xl'
+                  className='bg-[#F7D270] text-[#294944] px-8 py-4 rounded-xl font-semibold hover:bg-[#f5c957] transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2 whitespace-nowrap shadow-lg hover:shadow-xl'
                 >
                   {isSubscribing ? (
                     <>
@@ -1924,20 +1935,20 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.4 }}
-            className='bg-white rounded-2xl shadow-xl p-8 my-16 text-center'
+            className=' rounded-2xl shadow-xl p-8 my-16 text-center'
           >
-            <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <div className="w-12 h-12 bg-gradient-to-r from-[#386861] to-[#294944] rounded-full flex items-center justify-center mx-auto mb-6">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
               </svg>
             </div>
-            <h3 className='text-2xl font-bold text-gray-900 mb-4'>Share this article</h3>
-            <p className='text-gray-600 mb-8'>Spread the knowledge with your network</p>
+            <h3 className='text-2xl font-bold  mb-4'>Share this article</h3>
+            <p className='text-600 mb-6'>Spread the knowledge with your network</p>
             
             <div className='flex justify-center gap-4 flex-wrap'>
               <button
                 onClick={() => handleSocialShare('facebook')}
-                className="group bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="group bg-[#386861] hover:bg-[#294944] text-white p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 title="Share on Facebook"
               >
                 <FontAwesomeIcon icon={faFacebookF} className="text-xl group-hover:scale-110 transition-transform duration-300" />
@@ -1945,7 +1956,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
 
               <button
                 onClick={() => handleSocialShare('twitter')}
-                className="group bg-sky-500 hover:bg-sky-600 text-white p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="group bg-[#F7D270] hover:bg-[#eac25f] text-[#294944] p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 title="Share on Twitter"
               >
                 <FontAwesomeIcon icon={faTwitter} className="text-xl group-hover:scale-110 transition-transform duration-300" />
@@ -1953,7 +1964,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
 
               <button
                 onClick={() => handleSocialShare('googleplus')}
-                className="group bg-red-600 hover:bg-red-700 text-white p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="group bg-[#386861] hover:bg-[#294944] text-white p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 title="Share on Google Plus"
               >
                 <FontAwesomeIcon icon={faGooglePlusG} className="text-xl group-hover:scale-110 transition-transform duration-300" />
@@ -1961,7 +1972,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
 
               <button
                 onClick={() => handleSocialShare('linkedin')}
-                className="group bg-blue-800 hover:bg-blue-900 text-white p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                className="group bg-[#F7D270] hover:bg-[#eac25f] text-[#294944] p-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
                 title="Share on LinkedIn"
               >
                 <FontAwesomeIcon icon={faLinkedinIn} className="text-xl group-hover:scale-110 transition-transform duration-300" />
@@ -1975,11 +1986,11 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.6 }}
-              className="my-24 bg-gradient-to-br from-gray-50 to-blue-50/30 py-16 px-6 rounded-3xl"
+              // className="my-24 bg-gradient-to-br from-white to-[#F7F7D0]/40 py-16 px-6 rounded-3xl"
             >
               <div className="text-center mb-12">
-                <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg border border-gray-100 mb-6">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                <div className="inline-flex items-center gap-3 bg-white px-6 py-3 rounded-full shadow-lg border border-[#E8F1EF] mb-6">
+                  <div className="w-8 h-8 bg-gradient-to-r from-[#386861] to-[#294944] rounded-full flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
@@ -1987,7 +1998,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                   <span className="text-gray-600 font-medium">Related Articles</span>
                 </div>
                 
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#294944]">
                   Continue Your Learning Journey
                 </h2>
                 <p className="text-gray-600 text-lg max-w-2xl mx-auto leading-relaxed">
@@ -2018,14 +2029,14 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                         
                         {/* Category badge */}
                         <div className="absolute top-3 left-3">
-                          <span className="bg-white/90 backdrop-blur-sm text-gray-700 text-xs font-semibold px-3 py-1 rounded-full border border-white/20 shadow-sm">
+                          <span className="bg-white/90 backdrop-blur-sm text-[#294944] text-xs font-semibold px-3 py-1 rounded-full border border-white/20 shadow-sm">
                             {blog.category}
                           </span>
                         </div>
                         
                         {/* Reading time */}
                         <div className="absolute bottom-3 right-3">
-                          <div className="flex items-center gap-1 bg-black/20 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
+                          <div className="flex items-center gap-1 bg-black/25 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
@@ -2038,7 +2049,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                       <div className="p-6 flex flex-col flex-1">
                         {/* Title with fixed height */}
                         <div className="h-16 mb-3">
-                          <h3 className="text-lg font-bold text-gray-900 leading-tight line-clamp-2 group-hover:text-blue-600 transition-colors duration-300">
+                          <h3 className="text-lg font-bold text-[#294944] leading-tight line-clamp-2 group-hover:text-[#386861] transition-colors duration-300">
                             {blog.title}
                           </h3>
                         </div>
@@ -2053,7 +2064,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                         {/* Footer */}
                         <div className="flex items-center justify-between pt-4 border-t border-gray-100 mt-auto">
                           <div className="flex items-center gap-2 text-xs text-gray-500">
-                            <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-medium text-xs">
+                            <div className="w-6 h-6 bg-gradient-to-r from-[#386861] to-[#294944] rounded-full flex items-center justify-center text-white font-medium text-xs">
                               {blog.author?.charAt(0) || 'A'}
                             </div>
                             <span className="font-medium">
@@ -2064,7 +2075,7 @@ Your blog posts will now look like they belong in a high-end digital magazine wi
                             </span>
                           </div>
                           
-                          <div className="flex items-center text-blue-600 group-hover:text-blue-700 transition-colors duration-300">
+                          <div className="flex items-center text-[#386861] group-hover:text-[#294944] transition-colors duration-300">
                             <span className="text-sm font-medium mr-1">Read</span>
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 group-hover:translate-x-0.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
