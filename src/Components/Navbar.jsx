@@ -8,9 +8,9 @@ import { FaChevronDown, FaFacebookF, FaInstagram, FaPinterestP, FaYoutube } from
 import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
 import Logo1 from "@/Assets/Logo1.png";
 import Logo2 from "@/Assets/Logo2.png";
-import ContentSyndicationImg from '@/Assets/b2b.jpg';
-import DisplayAdsImg from '@/Assets/sales.jpg';
-import SalesDevelopmentImg from '@/Assets/advertise.jpg';
+import ContentSyndicationImg from '@/Assets/content.png';
+import DisplayAdsImg from '@/Assets/data.png';
+import SalesDevelopmentImg from '@/Assets/sales.jpg';
 
 // Optimized debounce function
 const debounce = (func, wait) => {
