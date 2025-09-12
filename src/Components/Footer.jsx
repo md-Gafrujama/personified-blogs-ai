@@ -113,7 +113,7 @@ const Footer = () => {
   <h3 className="text-lg font-semibold mb-4">About Us</h3>
   <ul className="space-y-2 text-sm text-gray-300">
     <li>
-      <Link href="/Contact" className="hover:text-[#ffd800]">Contact Us</Link>
+      <Link href="https://personifiedb2bmarketing.com/Contact" className="hover:text-[#ffd800]">Contact Us</Link>
     </li>
     <li>
       <Link href="/About" className="hover:text-[#ffd800]">About Us</Link>
