@@ -583,7 +583,7 @@ const Navbar = () => {
 
                     <li role="none">
                         <Link 
-                            href=""
+                            href="https://personifiedb2bmarketing.com/Contact"
                             className={`relative hover:text-[#386861] font-bold ${getResponsiveStyles.textSize} transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#386861] focus:rounded-xl px-3 py-2 rounded-xl hover:bg-[#386861]/5 active:scale-95 group`}
                             role="menuitem"
                         >
