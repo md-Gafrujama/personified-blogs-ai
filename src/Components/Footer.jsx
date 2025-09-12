@@ -116,17 +116,9 @@ const Footer = () => {
       <Link href="https://personifiedb2bmarketing.com/Contact" className="hover:text-[#ffd800]">Contact Us</Link>
     </li>
     <li>
-      <Link href="/About" className="hover:text-[#ffd800]">About Us</Link>
+      <Link href="https://personifiedb2bmarketing.com/About" className="hover:text-[#ffd800]">About Us</Link>
     </li>
-    <li>
-      <Link href="/" className="hover:text-[#ffd800]"></Link>
-    </li>
-    <li>
-      <Link href="/" className="hover:text-[#ffd800]"></Link>
-    </li>
-    <li>
-      <Link href="/" className="hover:text-[#ffd800]"></Link>
-    </li>
+    
   </ul>
 </div>
 
@@ -134,14 +126,14 @@ const Footer = () => {
   <h3 className="text-lg font-semibold mb-4">Solutions</h3>
   <ul className="space-y-2 text-sm text-gray-300">
     <li>
-      <Link href="/" className="hover:text-[#ffd800]">B2B Content Sydication</Link>
+      <Link href="https://personifiedb2bmarketing.com/ContentSyndication" className="hover:text-[#ffd800]">B2B Content Sydication</Link>
     </li>
     <li>
-      <Link href="/" className="hover:text-[#ffd800]">B2B Data & Intent
+      <Link href="https://personifiedb2bmarketing.com/B2BDataIntent" className="hover:text-[#ffd800]">B2B Data & Intent
 </Link>
     </li>
     <li>
-      <Link href="/" className="hover:text-[#ffd800]">Sales Devlopment</Link>
+      <Link href="https://personifiedb2bmarketing.com/SalesDevelopment" className="hover:text-[#ffd800]">Sales Devlopment</Link>
     </li>
     
     

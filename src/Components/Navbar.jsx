@@ -51,30 +51,30 @@ const Navbar = () => {
     // Memoized navigation data
     const navigationData = useMemo(() => ({
         solutionsItems: [
-            { name: 'B2B Content Syndication', href: '/ContentSyndication' },
-            { name: 'Display Advertising', href: '/DisplayAds' },
-            { name: 'Sales Development', href: '/SalesDevelopment' },
+            { name: 'B2B Content Syndication', href: 'https://personifiedb2bmarketing.com/ContentSyndication' },
+            { name: 'B2B Data and Intent', href: 'https://personifiedb2bmarketing.com/B2BDataIntent' },
+            { name: 'Sales Development', href: 'https://personifiedb2bmarketing.com/SalesDevelopment' },
         ],
         solutionsDesktopItems: [
             { 
                 name: 'B2B Content Syndication', 
                 subText: '', 
                 image: ContentSyndicationImg, 
-                href: '/ContentSyndication',
+                href: 'https://personifiedb2bmarketing.com/ContentSyndication',
                 alt: 'B2B Content Syndication - Connect with your target audience'
             },
             { 
                 name: 'B2B Data & Intent',
                 subText: '', 
                 image: DisplayAdsImg, 
-                href: '/DisplayAds',
+                href: 'https://personifiedb2bmarketing.com/B2BDataIntent',
                 alt: 'Display Advertising - Engage potential customers'
             },
             { 
                 name: 'Sales Development', 
                 subText: '', 
                 image: SalesDevelopmentImg, 
-                href: '/SalesDevelopment',
+                href: 'https://personifiedb2bmarketing.com/SalesDevelopment',
                 alt: 'Sales Development - Convert leads to customers'
             },
         ],
@@ -476,7 +476,7 @@ const Navbar = () => {
                 >
                     <li role="none">
                         <Link 
-                            href="/"
+                            href="https://personifiedb2bmarketing.com/"
                             className={`relative hover:text-[#386861] border-0 font-bold ${getResponsiveStyles.textSize} transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#386861] focus:rounded-xl px-3 py-2 rounded-xl hover:bg-[#386861]/5 active:scale-95 group`}
                             role="menuitem"
                         >
@@ -487,7 +487,7 @@ const Navbar = () => {
                     
                     <li role="none">
                         <Link 
-                            href="/About"
+                            href="https://personifiedb2bmarketing.com/About"
                             className={`relative hover:text-[#386861] font-bold ${getResponsiveStyles.textSize} transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#386861] focus:rounded-xl px-3 py-2 rounded-xl hover:bg-[#386861]/5 active:scale-95 group`}
                             role="menuitem"
                         >
@@ -583,7 +583,7 @@ const Navbar = () => {
 
                     <li role="none">
                         <Link 
-                            href="/Contact"
+                            href=""
                             className={`relative hover:text-[#386861] font-bold ${getResponsiveStyles.textSize} transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#386861] focus:rounded-xl px-3 py-2 rounded-xl hover:bg-[#386861]/5 active:scale-95 group`}
                             role="menuitem"
                         >
@@ -633,7 +633,7 @@ const Navbar = () => {
                 {/* Get Started Button */}
                 {screenSize.showGetStarted && (
                     <Link 
-                        href="/Contact"
+                        href="https://personifiedb2bmarketing.com/Contact"
                         className={`
                             hidden md:block bg-gradient-to-r from-[#386861] to-[#294944] text-white py-3 px-8 font-bold rounded-2xl
                             transition-all duration-500 hover:from-[#294944] hover:to-[#1f3632] mt-4 md:mt-0 w-full md:w-auto
