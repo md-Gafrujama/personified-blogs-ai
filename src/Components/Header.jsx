@@ -17,7 +17,7 @@ const Header = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("email", email);
-    formData.append("company", 'personifiedb2b');
+    formData.append("company", company || 'personifiedb2b');
     try {
       const baseURL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:5000";
       const response = await axios.post(`${baseURL}/api/email`, formData);
