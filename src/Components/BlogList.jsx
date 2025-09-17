@@ -316,6 +316,12 @@ const BlogList = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [viewMode, setViewMode] = useState("grid");
   const [company, setCompany] = useState("");
+  const [refreshKey, setRefreshKey] = useState(0);
+
+  // Expose refresh function to parent component
+  const refreshBlogs = () => {
+    setRefreshKey(prevKey => prevKey + 1);
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -329,7 +335,7 @@ const BlogList = () => {
     setIsLoading(true);
     try {
       const response = await axios.get(
-        `${baseURL}/api/admin/blogs?company=${company}`
+        `${baseURL}/api/blog/all?company=${company}`
       );
       const filteredBlogs =
         response.data?.blogs?.filter((blog) => blog.company === company) || [];
@@ -346,7 +352,7 @@ const BlogList = () => {
 
   useEffect(() => {
     fetchBlogs();
-  }, [company]);
+  }, [company, refreshKey]);
 
   const handleSearch = (searchTerm) => {
     setInput(searchTerm);

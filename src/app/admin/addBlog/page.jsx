@@ -137,8 +137,17 @@ const Page = () => {
       const response = await axios.post(`${baseURL}/api/blog/add`, formData);
       if (response.data.success) {
         toast.success('Blog added successfully!');
+        
+        // Refresh the blog list in the parent component
+        if (typeof window !== 'undefined' && window.refreshBlogList) {
+          window.refreshBlogList();
+        }
+        
+        // Redirect to blog list after a short delay
         setTimeout(() => {
           router.push('/admin/blogList');
+          // Force a full page reload to ensure the latest data is shown
+          router.refresh();
         }, 1500);
       } else {
         toast.error(response.data.message || 'Something went wrong');
