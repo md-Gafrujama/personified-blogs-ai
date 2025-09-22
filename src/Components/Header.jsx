@@ -51,7 +51,7 @@ const Header = () => {
         <div className='absolute top-1/4 right-1/3 w-64 h-64 bg-gradient-to-b from-[#386861]/10 to-transparent rounded-full blur-2xl'></div>
       </div>
       
-      <div className='py-10 px-5 md:px-12 lg:px-28'>
+      <div className=' px-5 md:px-12 lg:px-28'>
         <div className='flex justify-between items-center'>
           {/* Logo section can be uncommented when needed */}
           {/* <Image src={assets.logo} width={180} alt='image' className='w-[130px] sm:w-auto'/> */}
