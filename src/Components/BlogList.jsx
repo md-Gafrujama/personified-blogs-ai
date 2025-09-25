@@ -9,16 +9,13 @@ const Company = company;
 // Blog categories
 const blogCategories = [
   "All",
-  "ABM",
-  "Advertising",
-  "Content Creation",
-  "Demand Generation",
-  "Intent Data",
+  "Marketing",
+  "Tech",
   "Sales",
 ];
 
 const BlogCard = ({ blog, index }) => {
-  const { title, description = "", category, image, _id, slug } = blog;
+  const { title, description = "", department, subcategory, image, _id, slug } = blog;
   const [isHovered, setIsHovered] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -84,7 +81,7 @@ const BlogCard = ({ blog, index }) => {
           />
 
           {/* Animated Category Badge */}
-          {category && (
+          {department && (
             <motion.div 
               className="absolute top-4 right-4"
               initial={{ scale: 0, rotate: -45 }}
@@ -96,7 +93,7 @@ const BlogCard = ({ blog, index }) => {
                 whileHover={{ scale: 1.05, rotate: 2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                {category}
+                {department} - {subcategory}
               </motion.span>
             </motion.div>
           )}
@@ -363,7 +360,8 @@ const BlogList = () => {
     const filtered = blogs.filter(
       (blog) =>
         blog.title?.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        blog.category?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        blog.department?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        blog.subcategory?.toLowerCase().includes(searchTerm.toLowerCase()) ||
         blog.description?.toLowerCase().includes(searchTerm.toLowerCase())
     );
     setSearchResults(filtered);
@@ -379,7 +377,7 @@ const BlogList = () => {
   const getFilteredBlogs = () => {
     let filtered = searchResults;
     if (menu !== "All") {
-      filtered = filtered.filter((item) => item.category === menu);
+      filtered = filtered.filter((item) => item.department === menu);
     }
     return filtered;
   };
