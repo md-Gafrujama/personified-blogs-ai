@@ -9,9 +9,24 @@ const Company = company;
 // Blog categories
 const blogCategories = [
   "All",
-  "Marketing",
-  "Tech",
-  "Sales",
+    "Staffing Solutions",
+
+"Recruitment Services",
+
+"Talent Acquisition",
+
+"Workforce Solutions",
+
+"Contract Staffing",
+
+"Permanent Staffing",
+
+"Temp-to-Hire",
+
+"Outsourced Recruitment",
+
+"Hiring Solutions"
+
 ];
 
 const BlogCard = ({ blog, index }) => {

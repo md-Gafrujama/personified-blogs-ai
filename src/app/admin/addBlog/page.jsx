@@ -20,12 +20,12 @@ const Page = () => {
     Sales: ['Lead Generation', 'CRM', 'B2B', 'Inside Sales', 'Field Sales']
   };
   const router = useRouter();
-  const { axios } = useAppContext()
-  const editorRef = useRef(null)
-  const quillRef = useRef(null)
+  const { axios } = useAppContext();
+  const editorRef = useRef(null);
+  const quillRef = useRef(null);
 
-  const [loading, setLoading] = useState(false)
-  const [image, setImage] = useState(false)
+  const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState(false);
   const [data, setData] = useState({
     title: '',
     description: '',
