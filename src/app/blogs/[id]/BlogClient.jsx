@@ -375,7 +375,7 @@ const BlogClient = ({ slug }) => {
               transition={{ duration: 0.8 }}
               className='inline-block bg-[#F7D270]/20 backdrop-blur-sm border border-[#F7D270]/30 rounded-full px-4 py-2 mb-6'
             >
-              <span className='text-[#F7D270] text-sm font-medium'>{data.category}</span>
+              <span className='text-[#F7D270] text-sm font-medium'>{data.subcategory || data.category}</span>
             </motion.div>
             
             <motion.h1 

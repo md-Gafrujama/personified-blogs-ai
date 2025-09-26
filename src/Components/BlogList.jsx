@@ -6,27 +6,14 @@ import { baseURL, company } from "@/config/api";
 
 const Company = company;
 
-// Blog categories
+// Marketing subcategories only
 const blogCategories = [
   "All",
-    "Staffing Solutions",
-
-"Recruitment Services",
-
-"Talent Acquisition",
-
-"Workforce Solutions",
-
-"Contract Staffing",
-
-"Permanent Staffing",
-
-"Temp-to-Hire",
-
-"Outsourced Recruitment",
-
-"Hiring Solutions"
-
+  "ABM",
+  "Advertising",
+  "Content Creation",
+  "Demand Generation",
+  "Intent Data",
 ];
 
 const BlogCard = ({ blog, index }) => {
@@ -349,8 +336,11 @@ const BlogList = () => {
       const response = await axios.get(
         `${baseURL}/api/blog/all?company=${company}`
       );
+     // && blog.department === "Marketing"
       const filteredBlogs =
-        response.data?.blogs?.filter((blog) => blog.company === company) || [];
+        response.data?.blogs?.filter((blog) => 
+          blog.company === company
+        ) || [];
       setBlogs(filteredBlogs);
       setSearchResults(filteredBlogs);
     } catch (error) {
@@ -392,7 +382,7 @@ const BlogList = () => {
   const getFilteredBlogs = () => {
     let filtered = searchResults;
     if (menu !== "All") {
-      filtered = filtered.filter((item) => item.department === menu);
+      filtered = filtered.filter((item) => item.subcategory === menu);
     }
     return filtered;
   };
@@ -445,8 +435,8 @@ const BlogList = () => {
               }}
               transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
             >
-              <span className="text-[#F7D270]">Explore</span> Our <br />
-              <span className="text-white">Knowledge Hub</span>
+              <span className="text-[#F7D270]">Marketing</span> <br />
+              <span className="text-white">Insights Hub</span>
             </motion.h1>
             <motion.p 
               className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto leading-relaxed mb-8"
@@ -454,9 +444,8 @@ const BlogList = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
-              Dive into a curated collection of insights, trends, and expert
-              knowledge designed to elevate your understanding and inspire
-              action.
+              Discover cutting-edge marketing strategies, trends, and expert
+              insights across ABM, advertising, content creation, demand generation, and intent data.
             </motion.p>
 
             {/* Enhanced Search Bar */}
