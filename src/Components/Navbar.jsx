@@ -401,7 +401,7 @@ const Navbar = () => {
                 <span>Monday - Friday, 10am - 05pm</span> */}
             </div>
             <div className="flex flex-wrap justify-center md:justify-end items-center gap-2 sm:gap-4 text-center">
-                <span className="font-bold">personifiedb2bmarketing@gmail.com</span>
+                {/* <span className="font-bold">personifiedb2bmarketing@gmail.com</span> */}
                 {/* <span className="font-bold hidden sm:inline">|</span> */}
                 {/* <span className="font-bold">+3929 455 645</span>
                 <span className="font-bold hidden sm:inline">|</span> */}
