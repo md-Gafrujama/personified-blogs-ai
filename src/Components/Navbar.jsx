@@ -414,7 +414,7 @@ const Navbar = () => {
 
             {/* Main Navigation Bar (formerly lownav) */}
             <nav 
-                className="fixed top-[56px] left-0 right-0 z-40 text-black bg-white/90 backdrop-blur-xl px-4 py-3 flex justify-between items-center flex-wrap h-auto lg:h-[100px] shadow-lg border-b border-gray-100"
+                className="fixed top-[23px] left-0 right-0 z-40 text-black bg-white/90 backdrop-blur-xl px-4 py-3 flex justify-between items-center flex-wrap h-auto lg:h-[100px] shadow-lg border-b border-gray-100"
                 aria-label="Main navigation"
                 role="navigation"
             >

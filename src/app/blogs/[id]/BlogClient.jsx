@@ -41,7 +41,14 @@ const BlogClient = ({ slug }) => {
       "@type": "BlogPosting",
       "headline": blog.title,
       "description": blog.description?.replace(/<[^>]+>/g, '').slice(0, 160),
-      "image": blog.image,
+      "image": {
+  "@type": "ImageObject",
+  "url": blog.image,
+  "width": 1920,
+  "height": 1080,
+  "aspectRatio": "16:9"
+}
+,
       "author": {
         "@type": "Person",
         "name": blog.author || "Admin"
@@ -440,22 +447,18 @@ const BlogClient = ({ slug }) => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className='relative'
           >
-            <Image 
-              className='rounded-2xl w-full shadow-2xl bg-white' 
-              src={data.image} 
-              width={1200} 
-              height={600} 
-              alt={data.title}
-              style={{ 
-                aspectRatio: '2/1', 
-                objectFit: 'cover', 
-                objectPosition: 'center',
-                width: '100%',
-                height: '600px',
-                maxHeight: '600px',
-                minHeight: '600px'
-              }}
-            />
+            <div className="relative w-full bg-white rounded-2xl p-2 shadow-2xl">
+  <div className="relative w-full overflow-hidden rounded-xl bg-gray-50 aspect-video">
+    <Image 
+      className="object-cover"
+      src={data.image}
+      alt={data.title}
+      fill
+      priority
+    />
+  </div>
+</div>
+
           </motion.div>
           
           {/* Premium Blog Content Format */}
