@@ -5,6 +5,9 @@ import { useAppContext } from "@/context/AppContext";
 import toast from "react-hot-toast";
 import { baseURL } from "@/config/api";
 
+const stripHtmlTags = (html) => {
+  return html?.replace(/<[^>]*>/g, '') || '';
+};
 export default function EditBlogPage() {
   const { id } = useParams();
   const { axios } = useAppContext();
@@ -32,8 +35,8 @@ export default function EditBlogPage() {
       if (data) {
         setFormData({
           title: data.title || "",
-          description: data.description || "",
-          category: data.category || "",
+          description: stripHtmlTags(data.description) || "",
+          category: data.subcategory || data.category || "",
           author: data.author || "",
           image: data.image || "",
           company: data.company || "",
